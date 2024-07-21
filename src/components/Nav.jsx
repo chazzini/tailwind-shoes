@@ -5,13 +5,13 @@ import { useState } from "react";
 
 const ROUTES = ["Home", "About", "Service", "Product", "Contact us"];
 export function Nav() {
-  const [isMobileMenuShow, setIsMobileMenuShow] = useState(true);
+  const [isMobileMenuShow, setIsMobileMenuShow] = useState(false);
   const toggleMenu = () => {
     setIsMobileMenuShow((prev) => !prev);
   };
 
   return (
-    <nav className="flex justify-between items-center flex-wrap">
+    <nav className="flex justify-between items-center flex-wrap relative z-10">
       {/* Logo */}
       <a href="">
         <NikeLogo className="h-20 w-20" />
@@ -35,8 +35,10 @@ export function Nav() {
             return (
               <li
                 key={route}
-                className={`px-3 py-2 cursor-pointer rounded-lg
-                ${i == 0 ? "bg-blue-500 text-white lg:bg-transparent lg:text-blue-500 " : "hover:bg-gray-100"}`}
+                className={`px-3 py-2 cursor-pointer rounded-lg lg:bg-transparent lg:hover:bg-transparent lg:hover:text-blue-500
+                ${i == 0 ? "bg-blue-500 text-white lg:bg-transparent lg:text-blue-500 " : "hover:bg-gray-100 lg:hove:bg-transparent"}
+                ${i == 3 || i == 4 ? "lg:text-white" : ""}
+                `}
               >
                 {route}
               </li>
@@ -46,8 +48,8 @@ export function Nav() {
       </div>
 
       {/* cart button */}
-      <div className="fixed left-4 bottom-4 lg:static">
-        <div className="h-12 w-12 rounded-full bg-white shadow-md flex-center">
+      <div className="fixed left-4 bottom-4 lg:static lg:mr-8">
+        <div className="h-12 w-12 rounded-full bg-white shadow-md flex-center cursor-pointer">
           <BiShoppingBag />
         </div>
       </div>
