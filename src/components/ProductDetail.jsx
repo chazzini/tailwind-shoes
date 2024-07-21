@@ -6,8 +6,8 @@ const ProductDetail = () => {
     <div className="flex flex-col lg:flex-row-reverse space-y-4">
       <div className="flex-1 lg:-mt-20 lg:ml-16">
         {/* Shoe image */}
-        <div className="h-full flex-center bg-gradient-to-br from-[#f637cf] from-5% via-[#e3d876] via-40% to-[#4dd4c6]">
-          <img src={nike1} />
+        <div className=" h-full flex-center bg-gradient-to-br from-[#f637cf] from-5% via-[#e3d876] via-40% to-[#4dd4c6]">
+          <img src={nike1} className="animate-float" />
         </div>
       </div>
       <div className="flex-1 space-y-6">
