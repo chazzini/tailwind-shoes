@@ -7,3 +7,9 @@
     @apply font-bold text-5xl;
   }
 }
+
+@layer utilities {
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+}
