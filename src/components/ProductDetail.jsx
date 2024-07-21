@@ -1,4 +1,6 @@
 import nike1 from "../assets/n1-min.png";
+import { QTY, SIZES } from "../constant";
+import Select from "./Select";
 const ProductDetail = () => {
   return (
     <div className="flex flex-col lg:flex-row-reverse space-y-4">
@@ -14,7 +16,11 @@ const ProductDetail = () => {
           The Nike Air Maz 270 is a lifestyle shoe that's sure to turn head with
           its vibrant color gradient.
         </p>
-        <div className="text-3xl font-extrabold md:text-6xl">100 $</div>
+        <div className="flex flex-row space-x-4">
+          <div className="text-3xl font-extrabold md:text-6xl">100 $</div>
+          <Select title="Qty" options={QTY} />
+          <Select title="Size" options={SIZES} />
+        </div>
         <div className="space-x-10">
           <button className="h-14 w-44 bg-black text-white hover:bg-gray-900">
             Add to bag
